@@ -35,6 +35,8 @@ fun ShoppingListApp(modifier: Modifier = Modifier) {
     var itemQuantity by remember { mutableStateOf("") }
     var shoppingList by remember { mutableStateOf(listOf<ShoppingItem>()) }
 
+
+    //println('test');
     Column(modifier = modifier.padding(16.dp)) {
         TextField(
             value = itemName,
