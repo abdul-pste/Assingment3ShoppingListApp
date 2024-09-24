@@ -36,7 +36,6 @@ fun ShoppingListApp(modifier: Modifier = Modifier) {
     var shoppingList by remember { mutableStateOf(listOf<ShoppingItem>()) }
 
     Column(modifier = modifier.padding(16.dp)) {
-        // TextField for item name
         TextField(
             value = itemName,
             onValueChange = { itemName = it },
@@ -46,7 +45,6 @@ fun ShoppingListApp(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // TextField for item quantity
         TextField(
             value = itemQuantity,
             onValueChange = { itemQuantity = it },
@@ -56,7 +54,6 @@ fun ShoppingListApp(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // Button to add items to the shopping list
         Button(
             onClick = {
                 if (itemName.isNotBlank() && itemQuantity.isNotBlank()) {
@@ -72,7 +69,6 @@ fun ShoppingListApp(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Display the shopping list using LazyColumn
         LazyColumn {
             items(shoppingList) { item ->
                 ShoppingListItem(item = item)
